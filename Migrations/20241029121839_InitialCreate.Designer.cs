@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace user_example.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20241028180758_InitialCreate")]
+    [Migration("20241029121839_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -65,7 +65,7 @@ namespace user_example.Migrations
                         new
                         {
                             UserID = 1,
-                            DateOfBirth = new DateTime(2024, 10, 28, 14, 7, 58, 364, DateTimeKind.Local).AddTicks(1205),
+                            DateOfBirth = new DateTime(2024, 10, 29, 8, 18, 39, 139, DateTimeKind.Local).AddTicks(1749),
                             Email = "admin@domain.com",
                             Password = "ADmin123.",
                             ProfilePicture = 0,

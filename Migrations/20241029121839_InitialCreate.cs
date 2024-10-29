@@ -41,7 +41,7 @@ namespace user_example.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "UserID", "DateOfBirth", "Email", "Password", "ProfilePicture", "Role", "SubscriptionLevel", "Username" },
-                values: new object[] { 1, new DateTime(2024, 10, 28, 14, 7, 58, 364, DateTimeKind.Local).AddTicks(1205), "admin@domain.com", "ADmin123.", 0, 1, 0, "admin" });
+                values: new object[] { 1, new DateTime(2024, 10, 29, 8, 18, 39, 139, DateTimeKind.Local).AddTicks(1749), "admin@domain.com", "ADmin123.", 0, 1, 0, "admin" });
         }
 
         /// <inheritdoc />
