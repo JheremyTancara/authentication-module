@@ -104,26 +104,8 @@ namespace Api.Controllers
         }
 
         [HttpPost(Name = "AddUser")]
-        [Authorize]
         public async Task<IActionResult> Create([FromBody] RegisterUserDTO userDTO)
         {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            
-            if (identity == null)
-            {
-                return Unauthorized(new { message = "Could not retrieve user identity." });
-            }
-            
-            var rToken = JwtService.validarToken(identity, _context);
-            if (!rToken.success) return Unauthorized(rToken);
-
-            User user = rToken.result;
-
-            if (user.Role != UserRole.Admin)
-            {
-                return Unauthorized(new { message = "Access denied. Admin role required." });
-            }
-
             var newUser = await userRepository.CreateAsync(userDTO);
             return CreatedAtAction(nameof(GetById), new { id = newUser.UserID }, userDTO);
         }
